@@ -1,0 +1,201 @@
+/* ===== Pengaturan Umum ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin: 0;
+    background-color: #1a120b;
+    color: #f3e3c3;
+    line-height: 1.7;
+}
+
+/* ===== Navigasi ===== */
+.menu {
+    background-color: #0f0905;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #e8b04a;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    color: #f5c76b;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(245, 199, 107, 0.6);
+}
+
+.menu nav a {
+    color: #f3e3c3;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.menu nav a:hover {
+    color: #f5c76b;
+    text-shadow: 0 0 10px rgba(245, 199, 107, 0.7);
+}
+
+/* ===== Beranda ===== */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(rgba(15, 9, 5, 0.4), rgba(26, 18, 11, 0.85)),
+        url('images/jpg.1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff1d6;
+    text-align: center;
+    padding: 80px 20px 100px;
+}
+
+.hero-isi {
+    max-width: 900px;
+    animation: muncul 1.2s ease both;
+}
+
+.label-angkatan {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 6px 20px;
+    border: 1px solid rgba(245, 199, 107, 0.7);
+    border-radius: 30px;
+    background-color: rgba(15, 9, 5, 0.5);
+    color: #f5c76b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 54px;
+    line-height: 1.15;
+    margin: 0 0 14px;
+    color: #f5c76b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 22px rgba(245, 180, 70, 0.8), 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.tagline {
+    max-width: 860px;
+    margin: 0 auto 34px;
+    font-size: 18px;
+    color: #fff1d6;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Tombol */
+.aksi {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.tombol {
+    display: inline-block;
+    padding: 13px 32px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #f5c76b, #e08a2e);
+    border: 2px solid transparent;
+    color: #2a1608;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(245, 180, 70, 0.55);
+    transition: all 0.3s ease;
+}
+
+.tombol:hover {
+    background: #fff1d6;
+    box-shadow: 0 0 26px rgba(245, 199, 107, 0.9);
+}
+
+.tombol-garis {
+    background: transparent;
+    border-color: #f5c76b;
+    color: #f5c76b;
+    box-shadow: none;
+}
+
+.tombol-garis:hover {
+    background-color: #f5c76b;
+    color: #2a1608;
+}
+
+/* Panah gulir */
+.gulir {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    line-height: 38px;
+    border: 1px solid rgba(245, 199, 107, 0.7);
+    border-radius: 50%;
+    color: #f5c76b;
+    font-size: 20px;
+    text-decoration: none;
+    animation: lompat 1.8s ease-in-out infinite;
+}
+
+/* Animasi */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lompat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* ===== Tampilan HP ===== */
+@media (max-width: 700px) {
+    .menu {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .menu nav a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+
+    .hero {
+        min-height: 85vh;
+        padding: 60px 20px 90px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+}
